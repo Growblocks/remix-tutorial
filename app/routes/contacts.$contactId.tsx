@@ -9,6 +9,7 @@ import { getContact } from "../data";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   invariant(params.contactId, "Missing contactId param");
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
   const contact = await getContact(params.contactId);
 
   if (!contact) {
